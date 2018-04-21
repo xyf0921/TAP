@@ -1,0 +1,77 @@
+<html>
+    <title>网络流量分析系统</title>
+<head>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">网络流量分析系统</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">文件</a></li>
+                    <li><a href="#">视图</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="mainWidget">
+        <div class="DirectoryTree"><h1>目录树,用bootstrap-treeview实现</h1></div>
+        <div class="Editor">
+            <div class="editor"><h1>编辑框,用bootstrap-editor实现</h1></div>
+            <div class="output"><h1>编辑框,用bootstrap-editor实现,禁止输入,只输出</h1></div>
+        </div>
+    </div>
+    <div class="statusBar"></div>
+    <!--
+        1. 获取目录树:   GET  /dir_tree
+            var tree = [{
+                    text:"Parent 1",
+                    nodes: [
+                    {
+                        text:"Child 1",
+                        nodes: [
+                        {
+                            text:"Grandchild 1"
+                        },
+                        {
+                            text:"Grandchild 2"
+                        }
+                        ]
+                    },
+                    {
+                        text:"Child 2"
+                    }
+                    ]
+                },
+                {text:"Parent 2"},
+                ];            
+        2. 获取运行状态 GET /session_status    
+        3. 提交脚本 POST /submit   脚本正文
+        4. 拉取Outout   GET /output
+    -->
+</body>
+</html>
+
+
+
